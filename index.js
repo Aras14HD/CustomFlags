@@ -7,7 +7,7 @@ displayList();
 function displayList() {
     let list = document.getElementById("selection");
     list.innerHTML = available.map(({name, svg}) => {
-        return `<div class="flag" draggable="true" ondragstart="drag(event)" id="${name}"> \n  <svg height="20pt" viewBox="0 0 500 300" preserveAspectRatio="none" id="${name}">${svg}</svg>  ${name} \n    </div>`;
+        return `<div class="flag" onclick="switchPlace(event)" draggable="true" ondragstart="drag(event)" id="${name}"> \n  <svg height="20pt" width="20pt" id="${name}">${svg}</svg>  ${name} \n    </div>`;
     }).reduce((p, c) => p + c);
 
 }
@@ -36,17 +36,11 @@ function saveFlag() {
 }
 
 function composeFlag() {
-    document.getElementById("flag").innerHTML = selected.length > 0 ? selected.length > 1 ? selected.reduce((p, c) => p.svg + c.svg) : selected[0].svg : "";
+    document.getElementById("flag").innerHTML = selected.length > 0 ? selected.length > 1 ? selected.reduce((p, c) => (p.svg ? p.svg : p) + c.svg) : selected[0].svg : "";
 }
 
-function changeSelection(ev) {
-    let targetId = ev.target.id;
-    let flag = available.find(({name}) => name === ev.dataTransfer.getData("text"));
-    if (targetId === "actives") {
-        selected.push(flag);
-    } else {
-        selected = selected.filter((item) => item !== flag);
-    }
+function changeSelection() {
+    selected = Array.from(document.getElementById("actives").children).map(node => available.find(({name}) => name === node.id));
     composeFlag();
 }
 
@@ -63,7 +57,19 @@ function drop(ev) {
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
 
-    changeSelection(ev)
+    changeSelection()
+}
+
+function switchPlace(ev) {
+    let node = ev.currentTarget;
+    let parent = node.parentNode.id;
+    if (parent === "actives") {
+        document.getElementById("selection").appendChild(node);
+    } else {
+        document.getElementById("actives").appendChild(node);
+    }
+
+    changeSelection();
 }
 
 function download(data, filename, type) {
