@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Custom Flag Tool</title>
+        <script src="flags.js"></script>    
+        <script defer src="index.js"></script>
+        <link rel="stylesheet" type="text/css" href="index.css"></link>
+    </head>
+    <body>
+        <svg viewBox="0 0 500 300" id="flag">
+        </svg>
+        <div id="actives" ondragover="allowDrop(event)" ondrop="drop(event)">
+        </div>
+        <div id="selection" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+        <input type="file" value="upload Flag (svg)" id="custom" onchange="addFlags(event)"></input>
+        <div id="save">
+            <input type="text" id="saveName" name="Name"></input>
+            <input type="button" value="Save as SVG" onclick="saveFlag()"></input>
+        </div>
+    </body>
+</html>

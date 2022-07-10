@@ -1,0 +1,12 @@
+body {
+    display: flex;
+    flex: auto;
+    flex-direction: row;
+}
+
+#actives {
+    width: 10%
+}
+#selection {
+    width: 10%
+}
