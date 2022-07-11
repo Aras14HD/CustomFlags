@@ -1,12 +1,57 @@
 body {
     display: flex;
-    flex: auto;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
-#actives {
-    width: 10%
+#flag {
+    flex-basis: 50%;
 }
-#selection {
-    width: 10%
+
+body * {
+    padding: 3px;
+    border: 2px solid;
+    border-radius: 3px;
+    margin: 1px;
+}
+
+.flag * {
+    padding: auto;
+    border: none;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 22%;
+} 
+
+* {
+    flex-grow: 1;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 1080px) {        
+    #flag {
+        flex-basis: 100%;
+    }
+
+    body {
+        flex-direction: column;
+    }
+
+    input {
+        flex-basis: 48%;
+    }
+}
+
+@media (min-width: 1081px) {
+    .selector {
+        overflow: scroll;
+    }
 }

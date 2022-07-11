@@ -21,7 +21,7 @@ function addFlags(ev) {
     for (let i = 0; i < ev.target.files.length; i++) {
         let file = ev.target.files[i];
         reader.onload = (ev) => {
-            available.push({name: file.name.replace(".svg", ""), svg: ev.target.result.replace(/<\/?svg(([^>])+)?>/g, "")   });
+            available.push({name: file.name.replace(".svg", ""), svg: ev.target.result   });
             displayList();
             composeFlag();
         };
@@ -58,6 +58,10 @@ function drop(ev) {
     ev.target.appendChild(document.getElementById(data));
 
     changeSelection()
+}
+function dropFiles(ev) {
+    ev.preventDefault();
+    addFlags({target: ev.dataTransfer})
 }
 
 function switchPlace(ev) {
