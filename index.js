@@ -21,7 +21,7 @@ function addFlags(ev) {
     for (let i = 0; i < ev.target.files.length; i++) {
         let file = ev.target.files[i];
         reader.onload = (ev) => {
-            available.push({name: file.name.replace(".svg", ""), svg: ev.target.result   });
+            available.push({name: file.name.replace(".svg", ""), svg: ev.target.result});
             displayList();
             composeFlag();
         };
