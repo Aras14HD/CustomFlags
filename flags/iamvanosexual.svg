@@ -1,0 +1,17 @@
+<svg viewBox="0 0 500 300" preserveAspectRatio="none">
+    <rect x="0" y="0" width="500" height="300" fill="#6c0206"/>
+</svg>
+<svg viewBox="0 0 500 300" preserveAspectRatio="xMinYMid slice">
+    <polygon points="0,300 0,0 40,0 75,150 40,300" fill="#ffffff"/>
+    <polygon points="40,300 75,150 40,0 75,0 110,150 75,300" fill="#c4c4c4"/>
+    <polygon points="75,300 110,150 75,0 110,0 145,150 110,300" fill="#808080"/>
+    <polygon points="110,300 145,150 110,0 145,0 180,150 145,300" fill="#636363"/>
+    <polygon points="145,300 180,150 145,0 180,0 215,150 180,300" fill="#be0710"/>
+</svg>
+<svg viewBox="0 0 500 300" preserveAspectRatio="xMaxYMid slice">
+    <polygon points="500,300 500,0 460,0 425,150 460,300" fill="#ffffff"/>
+    <polygon points="460,300 425,150 460,0 425,0 390,150 425,300" fill="#c4c4c4"/>
+    <polygon points="425,300 390,150 425,0 390,0 355,150 390,300" fill="#808080"/>
+    <polygon points="390,300 355,150 390,0 355,0 320,150 355,300" fill="#63636363"/>
+    <polygon points="355,300 320,150 355,0 320,0 285,150 320,300" fill="#be0710"/>
+</svg>

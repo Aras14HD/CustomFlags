@@ -30,7 +30,7 @@ function addFlags(ev) {
 }
 
 function saveFlag() {
-    let svg = document.getElementById("flag").innerHTML;
+    let svg = document.getElementById("flag").outerHTML;
     let name = document.getElementById("saveName").value;
     download(svg, name + ".svg", "text/svg+xml");
 }

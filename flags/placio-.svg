@@ -1,0 +1,9 @@
+<svg viewBox="0 0 500 300" preserveAspectRatio="xMidYMId slice">
+    <polygon points="110,300 75,150 110,0 145,0 110,150 145,300" fill="#636363"/>
+    <polygon points="145,300 110,150 145,0 180,0 145,150 180,300" fill="#808080"/>
+    <polygon points="180,300 145,150 180,0 215,0 180,150 215,300" fill="#c4c4c4"/>
+    <polygon points="215,300 180,150 215,0 285,0 320,150 285,300" fill="#ffffff"/>
+    <polygon points="285,300 320,150 285,0 320,0 355,150 320,300" fill="#c4c4c4"/>
+    <polygon points="320,300 355,150 320,0 355,0 390,150 355,300" fill="#808080"/>
+    <polygon points="355,300 390,150 355,0 390,0 425,150 390,300" fill="#636363"/>
+</svg>
