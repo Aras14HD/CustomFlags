@@ -1,4 +1,4 @@
-body {
+.container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -8,7 +8,11 @@ body {
     flex-basis: 50%;
 }
 
-body * {
+.selector {
+    overflow: scroll;
+}
+
+.container * {
     padding: 3px;
     border: 2px solid;
     border-radius: 3px;
@@ -41,7 +45,7 @@ body * {
         flex-basis: 100%;
     }
 
-    body {
+    .container {
         flex-direction: column;
     }
 
@@ -53,5 +57,8 @@ body * {
 @media (min-width: 1081px) {
     .selector {
         overflow: scroll;
+    }
+    .container * {
+        max-height: 90vh;
     }
 }

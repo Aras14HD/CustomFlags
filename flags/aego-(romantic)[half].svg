@@ -1,0 +1,7 @@
+<svg viewBox="0 0 500 300" preserveAspectRatio="none">
+    <polygon points="0,0 0,75 62.5,75" fill="#000000"/>
+    <polygon points="0,75 0,150 125,150 62.5,75" fill="#959595"/>
+    <polygon points="0,150 0,225 187.5,225 125,150" fill="#ffffff"/>
+    <polygon points="0,225 0,300 250,300 187.5,225" fill="#087d16"/>
+    <line x1="250" x2="250" y1="0" y2="300" stroke="black"/>
+</svg>
