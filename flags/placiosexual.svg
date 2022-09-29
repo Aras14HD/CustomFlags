@@ -1,7 +1,7 @@
 <svg viewBox="0 0 500 300" preserveAspectRatio="none">
     <rect x="0" y="0" width="500" height="300" fill="#6c0206"/>
 </svg>
-<svg viewBox="0 0 500 300" preserveAspectRatio="xMidYMId slice">
+<svg viewBox="0 0 500 300" preserveAspectRatio="xMidYMid slice">
     <polygon points="75,300 40,150 75,0 110,0 75,150 110,300" fill="#be0710"/>
     <polygon points="110,300 75,150 110,0 145,0 110,150 145,300" fill="#636363"/>
     <polygon points="145,300 110,150 145,0 180,0 145,150 180,300" fill="#808080"/>

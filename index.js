@@ -35,6 +35,36 @@ function saveFlag() {
     download(svg, name + ".svg", "text/svg+xml");
 }
 
+function saveAsPNG() {
+    let svg = document.getElementById("flag");
+    let name = document.getElementById("saveName").value;
+    let uri = `data:image/svg+xml;base64,${btoa(new XMLSerializer().serializeToString(svg))}`;
+    const img = new Image();
+    let output = {
+        name: name + ".png"
+    }
+    img.src = uri;
+    img.onload = () => {
+        const canvas = document.createElement("canvas");
+        [canvas.width, canvas.height] = [img.width, img.height]
+        const ctx = canvas.getContext("2d")
+        ctx.drawImage(img, 0, 0, img.width, img.height)
+
+        // 👇 download
+        const a = document.createElement("a")
+        const quality = 1.0 // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/imageSmoothingQuality
+        a.href = canvas.toDataURL("image/png", quality)
+        a.download = output.name
+        a.append(canvas)
+        a.click()
+        a.remove()
+    }
+    img.onerror = () => {
+        debugger;
+    }
+    document.getElementById("info").append(img);
+}
+
 function composeFlag() {
     document.getElementById("flag").innerHTML = selected.length > 0 ? selected.length > 1 ? selected.reduce((p, c) => (p.svg ? p.svg : p) + c.svg) : selected[0].svg : "";
 }

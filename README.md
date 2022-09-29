@@ -10,6 +10,9 @@ You can submit a flag (preferably as an svg) in an issue. Don't forget to check 
     - [x] Display
  - [x] Upload and Download flags (svg)
  - [ ] Download as PNG with custom aspect ratio
+    - [ ] Download
+        - [ ] Firefox
+        - [x] Others
  - [ ] Search
  - [ ] Sexual orientations
     - [ ] Ace-Spec
