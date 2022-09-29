@@ -1,5 +1,5 @@
 # CustomFlags
-Create a Flag for your Identity. [https://aras14hd.github.io/CustomFlags/]((here))
+Create a Flag for your Identity. [(here)](https://aras14hd.github.io/CustomFlags/)
 
 ## Submitting a flag
 You can submit a flag (preferably as an svg) in an issue. Don't forget to check if it already exists (and if it's missing an svg add one).
