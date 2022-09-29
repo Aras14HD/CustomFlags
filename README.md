@@ -13,7 +13,7 @@ You can submit a flag (preferably as an svg) in an issue. Don't forget to check 
     - [ ] Download
         - [ ] Firefox
         - [x] Others
-    - [ ] Aspect ratio
+    - [x] Aspect ratio
  - [ ] Search
  - [ ] Sexual orientations
     - [ ] Ace-Spec

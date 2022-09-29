@@ -36,6 +36,8 @@ function saveFlag() {
 }
 
 function saveAsPNG() {
+    let width = document.getElementById("width").value;
+    let height = document.getElementById("height").value;
     let svg = document.getElementById("flag");
     let name = document.getElementById("saveName").value;
     let uri = `data:image/svg+xml;base64,${btoa(new XMLSerializer().serializeToString(svg))}`;
@@ -44,6 +46,8 @@ function saveAsPNG() {
         name: name + ".png"
     }
     img.src = uri;
+    img.width = width;
+    img.height = height;
     img.onload = () => {
         const canvas = document.createElement("canvas");
         [canvas.width, canvas.height] = [img.width, img.height]
@@ -66,6 +70,15 @@ function saveAsPNG() {
 
 function composeFlag() {
     document.getElementById("flag").innerHTML = selected.length > 0 ? selected.length > 1 ? selected.reduce((p, c) => (p.svg ? p.svg : p) + c.svg) : selected[0].svg : "";
+    updateSize()
+}
+
+function updateSize() {
+    let width = document.getElementById("width").value;
+    let height = document.getElementById("height").value;
+    let flag = document.getElementById("flag");
+    flag.viewBox.baseVal.width = width;
+    flag.viewBox.baseVal.height = height;
 }
 
 function changeSelection() {
