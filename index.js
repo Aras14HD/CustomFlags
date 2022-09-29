@@ -62,7 +62,6 @@ function saveAsPNG() {
     img.onerror = () => {
         debugger;
     }
-    document.getElementById("info").append(img);
 }
 
 function composeFlag() {
