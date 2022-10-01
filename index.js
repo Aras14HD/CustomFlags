@@ -1,5 +1,6 @@
 var selected = [];
 var available = [];
+const { Canvg } = require('canvg');
 
 getPresets();
 displayList();
@@ -41,31 +42,22 @@ function saveAsPNG() {
     let svg = document.getElementById("flag");
     let name = document.getElementById("saveName").value;
     let uri = `data:image/svg+xml;base64,${btoa(new XMLSerializer().serializeToString(svg))}`;
-    const img = new Image();
-    let output = {
-        name: name + ".png"
-    }
-    img.src = uri;
-    img.width = width;
-    img.height = height;
-    img.onload = () => {
-        const canvas = document.createElement("canvas");
-        [canvas.width, canvas.height] = [img.width, img.height]
-        const ctx = canvas.getContext("2d")
-        ctx.drawImage(img, 0, 0, img.width, img.height)
-
-        // 👇 download
-        const a = document.createElement("a")
-        const quality = 1.0 // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/imageSmoothingQuality
-        a.href = canvas.toDataURL("image/png", quality)
-        a.download = output.name
-        a.append(canvas)
-        a.click()
-        a.remove()
-    }
-    img.onerror = () => {
-        debugger;
-    }
+    const canvas = document.createElement("canvas");
+    canvas.width = width;
+    canvas.height = height;
+    const ctx = canvas.getContext("2d")
+    Canvg.from(ctx, uri).then((v) => {
+        v.start();
+        v.ready().then(() => {
+            const a = document.createElement("a")
+            const quality = 1.0 // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/imageSmoothingQuality
+            a.href = canvas.toDataURL("image/png", quality)
+            a.download = name
+            a.append(canvas)
+            a.click()
+            a.remove()
+        })
+    })
 }
 
 function composeFlag() {
