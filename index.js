@@ -7,7 +7,7 @@ displayList();
 
 function displayList() {
     let list = document.getElementById("selection");
-    list.innerHTML = available.map(({name, svg}) => {
+    list.innerHTML += available.map(({name, svg}) => {
         return `<div class="flag" onclick="switchPlace(event)" draggable="true" ondragstart="drag(event)" id="${name}"> \n  <svg height="20pt" width="20pt" id="${name}">${svg}</svg>  ${name} \n    </div>`;
     }).reduce((p, c) => p + c);
 
@@ -58,6 +58,13 @@ function saveAsPNG() {
             a.remove()
         })
     })
+}
+
+function search(ev) {
+    let s = ev.target.value;
+    let nodes = document.getElementById("selection").childNodes.forEach((node) => {
+        node.hidden = node.id && node.id != "search" ? (node.id.includes(s) ? false : true) : false;
+    });
 }
 
 function composeFlag() {
