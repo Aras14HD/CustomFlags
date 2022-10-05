@@ -12,7 +12,7 @@ You can submit a flag (preferably as an svg) in an issue. Don't forget to check 
  - [x] Download as PNG with custom aspect ratio
     - [x] Download
     - [x] Aspect ratio
- - [ ] Search
+ - [x] Search
  - [ ] Sexual orientations
     - [ ] Ace-Spec
         - [x] Asexual

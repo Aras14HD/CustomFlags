@@ -13,7 +13,7 @@
             </svg>
             <div class="flex-row">
                 <div id="upload">
-                    <input type="file" value="upload Flag (svg)" id="custom" ondragover="allowDrop()" ondrop="dropFiles()" onchange="addFlags(event)"></input>                
+                    <input type="file" accept=".svg" value="upload Flag (svg)" id="custom" ondragover="allowDrop()" ondrop="dropFiles()" onchange="addFlags(event)"></input>                
                     Drop here
                 </div>
                 <div id="save">
@@ -27,7 +27,7 @@
             <div class="flex-row">
                 <div id="actives" class="selector" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
                 <div id="selection" class="selector" ondragover="allowDrop(event)" ondrop="drop(event)">
-                    <input type="text" id="search" oninput="search(event)"></input>
+                    <input type="text" id="search" value="" oninput="search(event)"></input>
                 </div>
             </div>
             <div id="info" class="flex-row">
