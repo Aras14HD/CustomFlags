@@ -37,6 +37,12 @@ You can submit a flag (preferably as an svg) in an issue. Don't forget to check 
             - [x] Flag
             - [x] Modifier
     - [x] Bi
+    - [x] Gay (MlM)
+    - [x] Lesbian (WlW)
+    - [x] Omni
+    - [x] Pan
+    - [x] Poly
+    - [x] Straight
  - [ ] Romantic orientations
     - [ ] Aro-Spec
         - [ ] Aegoromantic
@@ -58,6 +64,30 @@ You can submit a flag (preferably as an svg) in an issue. Don't forget to check 
                 - [x] Split
                 - [ ] Heart
     - [ ] Bi
+        - [x] Full
+        - [x] Split
+        - [ ] Heart
+    - [ ] Gay (MlM)
+        - [x] Full
+        - [x] Split
+        - [ ] Heart
+    - [ ] Straight
+        - [x] Full
+        - [x] Split
+        - [ ] Heart
+    - [ ] Lesbian
+        - [x] Full
+        - [x] Split
+        - [ ] Heart
+    - [ ] Omni
+        - [x] Full
+        - [x] Split
+        - [ ] Heart
+    - [ ] Pan
+        - [x] Full
+        - [x] Split
+        - [ ] Heart
+    - [ ] Poly
         - [x] Full
         - [x] Split
         - [ ] Heart

@@ -1,0 +1,10 @@
+<svg viewBox="0 0 500 300" preserveAspectRatio="none">
+    <rect x="0" y="0" width="250" height="43" fill="#078d70"/>
+    <rect x="0" y="43" width="250" height="43" fill="#26ceaa"/>
+    <rect x="0" y="86" width="250" height="43" fill="#98e8c1"/>
+    <rect x="0" y="129" width="250" height="42" fill="#ffffff"/>
+    <rect x="0" y="171" width="250" height="43" fill="#7bade2"/>
+    <rect x="0" y="214" width="250" height="43" fill="#5049cc"/>
+    <rect x="0" y="257" width="250" height="43" fill="#3d1a78"/>
+    <line x1="250" x2="250" y1="0" y2="300" stroke="black"/>
+</svg>

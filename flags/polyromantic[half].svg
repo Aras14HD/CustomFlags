@@ -1,0 +1,6 @@
+<svg viewBox="0 0 500 300" preserveAspectRatio="none">
+    <rect x="0" y="0" width="250" height="100" fill="#f61cb9"/>
+    <rect x="0" y="100" width="250" height="100" fill="#07d569"/>
+    <rect x="0" y="200" width="250" height="100" fill="#1c92f6"/>
+    <line x1="250" x2="250" y1="0" y2="300" stroke="black"/>
+</svg>
