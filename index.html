@@ -1,19 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: https://ogp.me/ns#">
     <head>
         <title>Custom Flag Tool</title>
+        <meta name='description' content='Create a custom pride flag for your identity! (currently sexuality/romantic attraction)'>
+        <meta property="og:title" content="Pride Flag Customizer">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://aras14hd.github.io/CustomFlags">
+        <meta property="og:description" content="Create a custom pride flag for your identity! (currently sexual/romantic attraction)">
+        <meta name="twitter:card" content="app">
+        <meta name="twitter:creator" content="@Aras14HD">
         <script src="canvg.js"></script>
-        <script src="flags.js"></script>    
+        <script src="flags.js"></script>
         <script defer src="index.js"></script>
         <link rel="stylesheet" type="text/css" href="index.css"></link>
     </head>
     <body>
-        <div class="container">
+        <div itemscope itemtype="https://schema.org/WebApplication" class="container">
             <svg viewBox="0 0 500 300" id="flag">
             </svg>
             <div class="flex-row">
                 <div id="upload">
-                    <input type="file" accept=".svg" value="upload Flag (svg)" id="custom" ondragover="allowDrop()" ondrop="dropFiles()" onchange="addFlags(event)"></input>                
+                    <input type="file" accept=".svg" value="upload Flag (svg)" id="custom" ondragover="allowDrop()" ondrop="dropFiles()" onchange="addFlags(event)"></input>
                     Drop here
                 </div>
                 <div id="save">
@@ -32,7 +39,7 @@
             </div>
             <div id="info" class="flex-row">
                 <a href="https://github.com/Aras14HD/CustomFlags/issues">Flag missing or found a bug?</a>
-                <a href="https://github.com/Aras14HD/CustomFlags">Source code</a>
+                <a itemprop="sameAs" href="https://github.com/Aras14HD/CustomFlags">Source code</a>
             </div>
         </div>
     </body>

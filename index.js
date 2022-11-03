@@ -5,6 +5,9 @@ const { Canvg } = require('canvg');
 getPresets();
 displayList();
 
+/**
+ * Adds all available Flags to the selection
+ */
 function displayList() {
     let list = document.getElementById("selection");
     list.innerHTML += available.map(({name, svg}) => {
@@ -13,10 +16,18 @@ function displayList() {
 
 }
 
+/**
+ * Fetches Flags from flags.js
+ */
 function getPresets() {
     available = presets;
 }
 
+/**
+ * Adds Flag from an uploaded file
+ *
+ * @param {Event} ev - input event for file
+ */
 function addFlags(ev) {
     const reader = new FileReader();
     for (let i = 0; i < ev.target.files.length; i++) {
@@ -30,25 +41,35 @@ function addFlags(ev) {
     }
 }
 
+/**
+ * Downloads the composed Flag as SVG
+ */
 function saveFlag() {
     let svg = document.getElementById("flag").outerHTML;
     let name = document.getElementById("saveName").value;
     download(svg, name + ".svg", "text/svg+xml");
 }
 
+/**
+ * Downloads the composed Flag as PNG
+ */
 function saveAsPNG() {
+    // Get values
     let width = document.getElementById("width").value;
     let height = document.getElementById("height").value;
     let svg = document.getElementById("flag");
     let name = document.getElementById("saveName").value;
     let uri = `data:image/svg+xml;base64,${btoa(new XMLSerializer().serializeToString(svg))}`;
+    // Create a canvas and context
     const canvas = document.createElement("canvas");
     canvas.width = width;
     canvas.height = height;
     const ctx = canvas.getContext("2d")
+    // Use canvg to render
     Canvg.from(ctx, uri).then((v) => {
         v.start();
         v.ready().then(() => {
+            // Download
             const a = document.createElement("a")
             const quality = 1.0 // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/imageSmoothingQuality
             a.href = canvas.toDataURL("image/png", quality)
@@ -60,6 +81,11 @@ function saveAsPNG() {
     })
 }
 
+/**
+ * Hides Flags in selection, that don't match the search
+ *
+ * @param {Event} ev - text input event
+ */
 function search(ev) {
     let s = ev.target.value;
     let nodes = document.getElementById("selection").childNodes.forEach((node) => {
@@ -67,11 +93,17 @@ function search(ev) {
     });
 }
 
+/**
+ * Composes the SVG Flag into the View
+ */
 function composeFlag() {
     document.getElementById("flag").innerHTML = selected.length > 0 ? selected.length > 1 ? selected.reduce((p, c) => (p.svg ? p.svg : p) + c.svg) : selected[0].svg : "";
     updateSize()
 }
 
+/**
+ * Updates the size of the Flag View
+ */
 function updateSize() {
     let width = document.getElementById("width").value;
     let height = document.getElementById("height").value;
@@ -80,6 +112,9 @@ function updateSize() {
     flag.viewBox.baseVal.height = height;
 }
 
+/**
+ * Sets selected to all selected Flags and then calls composeFlag
+ */
 function changeSelection() {
     selected = Array.from(document.getElementById("actives").children).map(node => available.find(({name}) => name === node.id));
     composeFlag();
@@ -100,11 +135,17 @@ function drop(ev) {
 
     changeSelection()
 }
+
 function dropFiles(ev) {
     ev.preventDefault();
     addFlags({target: ev.dataTransfer})
 }
 
+/**
+ * Toggles the selection of the clicked Flag
+ *
+ * @param {Event} ev - Click event
+ */
 function switchPlace(ev) {
     let node = ev.currentTarget;
     let parent = node.parentNode.id;
@@ -117,6 +158,13 @@ function switchPlace(ev) {
     changeSelection();
 }
 
+/**
+ * Downloads some Data
+ *
+ * @param {any} data - File content
+ * @param {String} filename - Name of the File
+ * @param {String} type - Filetype eg. text/svg+xml
+ */
 function download(data, filename, type) {
     var file = new Blob([data], {type: type});
     if (window.navigator.msSaveOrOpenBlob) // IE10+
