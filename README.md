@@ -29,13 +29,20 @@ You can submit a flag (preferably as an svg) in an issue. Don't forget to check 
                 - [x] Split
         - [ ] Greysexual
             - [x] Flag
-            - [ ] Modifier
+            - [x] Modifier
+                - [x] Solid
+                - [x] Translucent
         - [x] Iamvanosexual
             - [x] Flag
             - [x] Modifier
         - [x] Placiosexual
             - [x] Flag
             - [x] Modifier
+        - [ ] Apothisexual
+            - [ ] Flag
+            - [x] Modifier
+                - [x] With horizontal line
+                - [x] Without horizontal line
     - [x] Bi
     - [x] Gay (MlM)
     - [x] Lesbian (WlW)
@@ -62,6 +69,26 @@ You can submit a flag (preferably as an svg) in an issue. Don't forget to check 
             - [ ] Modifier
                 - [x] Full
                 - [x] Split
+                - [ ] Heart
+        - [ ] Greyromantic
+            - [ ] Flag
+            - [ ] Modifier
+                - [x] Full
+                    - [x] Solid
+                    - [x] Translucent
+                - [x] Split
+                    - [x] Solid
+                    - [x] Translucent
+                - [ ] Heart
+        - [ ] Apothiromantic
+            - [ ] Flag
+            - [ ] Modifier
+                - [x] Full
+                    - [x] With horizontal line
+                    - [x] Without horizontal line
+                - [x] Split
+                    - [x] With horizontal line
+                    - [x] Without horizontal line
                 - [ ] Heart
     - [ ] Bi
         - [x] Full
