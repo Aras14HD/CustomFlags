@@ -1,3 +1,9 @@
+/*
+ * TODO:
+ * - Rework rendering (dynamic Split + overlay)
+ * - Rework selection (up-down list to left-right split + overlay)
+ * - Rework? flags
+ */
 var selected = [];
 var available = [];
 const { Canvg } = require('canvg');
